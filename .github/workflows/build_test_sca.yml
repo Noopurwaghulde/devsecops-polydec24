@@ -14,12 +14,7 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
-
-      - name: Update axios and follow-redirects
-        run: |
-          npm install axios@latest
-          npm install follow-redirects@latest
-          
+      - run: npm audit fix    
       - run: npm run build 
       - run: npm test
       - run: npm audit
